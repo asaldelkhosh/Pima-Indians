@@ -5,5 +5,13 @@ from tensorflow.keras.layers import Dense
 
 
 
+# dataset path
+PATH = './dataset/pima-indians-diabetes.csv'
+
+
 if __name__ == "__main__":
-    pass
+    # load the dataset
+    dataset = loadtxt(PATH, delimiter=',')
+    # split into input (X) and output (y) variables
+    X = dataset[:,0:8]
+    y = dataset[:,8]
