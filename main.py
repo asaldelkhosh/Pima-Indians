@@ -28,4 +28,7 @@ if __name__ == "__main__":
         optimizer='adam', 
         metrics=['accuracy']
     )
+
+    # fit the keras model on the dataset
+    model.fit(X, y, epochs=150, batch_size=10)
     
