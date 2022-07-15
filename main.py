@@ -8,6 +8,11 @@ from tensorflow.keras.layers import Dense
 # dataset path
 PATH = './dataset/pima-indians-diabetes.csv'
 
+# model configs
+EPOCHS = 150
+BATCH_SIZE = 10
+ACCURACY_SCALE = 100
+
 
 if __name__ == "__main__":
     # load the dataset
@@ -30,8 +35,8 @@ if __name__ == "__main__":
     )
 
     # fit the keras model on the dataset
-    model.fit(X, y, epochs=150, batch_size=10)
+    model.fit(X, y, epochs=EPOCHS, batch_size=BATCH_SIZE)
 
     # evaluate the keras model
     _, accuracy = model.evaluate(X, y)
-    print('Accuracy: %.2f' % (accuracy*100))
+    print('Accuracy: %.2f' % (accuracy*ACCURACY_SCALE))
