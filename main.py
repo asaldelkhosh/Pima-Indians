@@ -15,3 +15,9 @@ if __name__ == "__main__":
     # split into input (X) and output (y) variables
     X = dataset[:,0:8]
     y = dataset[:,8]
+
+    # define the keras model
+    model = Sequential()
+    model.add(Dense(12, input_shape=(8,), activation='relu'))
+    model.add(Dense(8, activation='relu'))
+    model.add(Dense(1, activation='sigmoid'))
