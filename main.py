@@ -40,3 +40,8 @@ if __name__ == "__main__":
     # evaluate the keras model
     _, accuracy = model.evaluate(X, y)
     print('Accuracy: %.2f' % (accuracy*ACCURACY_SCALE))
+
+    # make probability predictions with the model
+    predictions = model.predict(X)
+    # round predictions 
+    rounded = [round(x[0]) for x in predictions]
